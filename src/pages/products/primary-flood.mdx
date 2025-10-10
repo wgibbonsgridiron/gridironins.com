@@ -1,272 +1,291 @@
 ---
-layout: ../../layouts/Layout.astro
-title: "Primary Flood | Gridiron Insurance"
-description: "Primary flood insurance with geospatial precision and modern UX."
+layout: ../../layouts/ProductLayout.astro
+title: "Private Flood Insurance | Gridiron Insurance"
+description: "Private flood coverage in 16 states with up to $10M limits. No elevation cert required to quote, bind, and issue."
 url: "https://gridironins.com/products/primary-flood"
+productName: "Private Flood"
+tagline: "Modern flood insurance without the red tape—no elevation certificates required to quote or bind"
+gradient: "from-cyan-600 to-blue-900"
+portal: "https://floodondemand.azurewebsites.net"
+contact: "Justin Lussier"
+states: "16 States"
+minPremium: "750"
 ---
 
-<div class="max-w-5xl mx-auto px-4 py-16">
+import StateMap from '../../components/StateMap.astro';
 
-# Primary Flood Insurance
+<div class="my-16">
+  <StateMap
+    states={['WA', 'OR', 'CA', 'TX', 'FL', 'GA', 'SC', 'NC', 'VA', 'DC', 'MD', 'NJ', 'NY', 'CT', 'RI', 'MA']}
+    title="Active Flood States"
+  />
+</div>
 
-<p class="text-xl text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
-Private market flood insurance with advanced geospatial modeling, flexible coverage options, and a modern application experience. An alternative to the NFIP with higher limits and broader coverage.
-</p>
+## Revolutionary Flood Coverage Features
 
----
-
-## Coverage Overview
-
-Our Primary Flood product leverages cutting-edge flood mapping technology and hydraulic modeling to provide accurate, competitive pricing for commercial properties. We offer coverage in both SFHA (Special Flood Hazard Area) and non-SFHA zones with limits that exceed NFIP maximums.
-
-<div class="grid md:grid-cols-2 gap-6 my-12">
-  <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-    <h3 class="text-lg font-semibold mb-3">Advanced Mapping</h3>
-    <p class="text-slate-600 dark:text-slate-400 text-sm">
-      Precision flood modeling using high-resolution terrain data, real-time hydrologic models, and historical flood data.
-    </p>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 my-12 not-prose">
+  <div class="relative p-8 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950 dark:to-blue-950 border-2 border-cyan-200 dark:border-cyan-800 overflow-hidden group hover:border-cyan-400 dark:hover:border-cyan-600 transition-all">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 dark:bg-cyan-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+    <div class="relative">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-500 dark:bg-cyan-600 mb-4">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">No Elevation Cert Needed</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Quote, bind, and issue without waiting for elevation certificates. Get coverage in place immediately.</p>
+    </div>
   </div>
-  <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-    <h3 class="text-lg font-semibold mb-3">Higher Limits</h3>
-    <p class="text-slate-600 dark:text-slate-400 text-sm">
-      Coverage up to [$AMOUNT] for buildings and [$AMOUNT] for contents—far exceeding NFIP limits.
-    </p>
+
+  <div class="relative p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-2 border-blue-200 dark:border-blue-800 overflow-hidden group hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 dark:bg-blue-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+    <div class="relative">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-500 dark:bg-blue-600 mb-4">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">No Waiting Period</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Coverage effective immediately—no 30-day NFIP-style waiting period. Protect your property today.</p>
+    </div>
   </div>
-  <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-    <h3 class="text-lg font-semibold mb-3">Broader Coverage</h3>
-    <p class="text-slate-600 dark:text-slate-400 text-sm">
-      Replacement cost coverage, additional living expenses, and lower deductibles than typical NFIP policies.
-    </p>
+
+  <div class="relative p-8 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950 dark:to-teal-950 border-2 border-emerald-200 dark:border-emerald-800 overflow-hidden group hover:border-emerald-400 dark:hover:border-emerald-600 transition-all">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+    <div class="relative">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-emerald-500 dark:bg-emerald-600 mb-4">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Up to $10M Limits</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Post-FIRM buildings eligible for up to $10 million per building or location. RCV up to max limit.</p>
+    </div>
   </div>
-  <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-    <h3 class="text-lg font-semibold mb-3">Fast Quotes</h3>
-    <p class="text-slate-600 dark:text-slate-400 text-sm">
-      Instant quotes using automated flood zone determination and real-time rating—no waiting days for NFIP processing.
-    </p>
+
+  <div class="relative p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950 dark:to-purple-950 border-2 border-violet-200 dark:border-violet-800 overflow-hidden group hover:border-violet-400 dark:hover:border-violet-600 transition-all">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 dark:bg-violet-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+    <div class="relative">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-violet-500 dark:bg-violet-600 mb-4">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Multi-Location Master Policy</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Combine multiple buildings and locations on a single master policy for streamlined management.</p>
+    </div>
+  </div>
+
+  <div class="relative p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 border-2 border-amber-200 dark:border-amber-800 overflow-hidden group hover:border-amber-400 dark:hover:border-amber-600 transition-all">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 dark:bg-amber-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+    <div class="relative">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500 dark:bg-amber-600 mb-4">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Business Income Available</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Add business income coverage up to 10% of the scheduled property limit for commercial risks.</p>
+    </div>
+  </div>
+
+  <div class="relative p-8 rounded-2xl bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-950 dark:to-pink-950 border-2 border-rose-200 dark:border-rose-800 overflow-hidden group hover:border-rose-400 dark:hover:border-rose-600 transition-all">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 dark:bg-rose-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+    <div class="relative">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-rose-500 dark:bg-rose-600 mb-4">
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">$750 Minimum Premium</h3>
+      <p class="text-slate-600 dark:text-slate-400 text-sm">Competitive minimum premium makes private flood accessible for a wide range of properties.</p>
+    </div>
   </div>
 </div>
 
----
+## Coverage Highlights
 
-## Why Choose Private Flood Over NFIP?
+<div class="my-12">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900">
+          <svg class="w-5 h-5 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        Primary or Excess Coverage
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Write as primary flood coverage or as excess over NFIP limits. Flexibility to structure coverage how your client needs it.</p>
+    </div>
 
-### Higher Coverage Limits
-NFIP caps building coverage at $500,000 and contents at $500,000 for commercial properties. Our private market flood insurance offers limits up to [$AMOUNT], protecting your full property value.
+    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900">
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        No Occupancy Restrictions
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Building coverage available for residential or commercial risks with no occupancy restrictions. Contents/BPP only coverage also available.</p>
+    </div>
 
-### Replacement Cost Coverage
-Unlike NFIP's actual cash value (depreciated) coverage for many items, we offer full replacement cost coverage for buildings and contents.
+    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900">
+          <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        Multiple Buildings per Location
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Cover up to 10 buildings per single location. Perfect for commercial complexes, apartment buildings, or multi-structure properties.</p>
+    </div>
 
-### Broader Covered Property
-We cover items that NFIP excludes or limits, such as:
-- Property in basements (limited under NFIP)
-- Detached structures
-- Swimming pools
-- Landscaping (limited coverage available)
-- Additional structures on premises
-
-### Lower Deductibles
-Flexible deductible options starting at [$AMOUNT], compared to NFIP's higher mandatory deductibles in many flood zones.
-
-### Additional Living Expense / Business Income
-Coverage for loss of income and extra expenses during flood-related closures—not available under NFIP.
-
----
-
-## Coverage Details
-
-### Building Coverage
-Protection for the structure and permanently installed items:
-- Building structure and foundation
-- Electrical and plumbing systems
-- HVAC systems
-- Built-in appliances and equipment
-- Fire sprinkler systems
-- Permanently installed carpeting and flooring
-- Central air conditioners
-
-### Contents Coverage
-Protection for business personal property:
-- Furniture and fixtures
-- Machinery and equipment
-- Inventory and stock
-- Supplies and materials
-- Portable equipment
-- Items in basement (subject to limits)
-
-### Additional Coverages
-- Debris removal
-- Reasonable cost to protect property from further damage
-- Business income (available as endorsement)
-- Extra expense (available as endorsement)
-- Pollutant cleanup (limited)
-
----
-
-## Underwriting Appetite
-
-<div class="prose prose-lg dark:prose-invert max-w-none">
-
-We write flood coverage for commercial properties in all flood zones, with pricing that reflects actual flood risk based on modern hydraulic modeling.
-
-**Property Types:**
-- Office buildings
-- Retail stores
-- Warehouses and distribution centers
-- Light manufacturing facilities
-- Apartment buildings (4+ units)
-- Mixed-use buildings
-- Self-storage facilities
-- Hotels and motels
-
-**Flood Zones Accepted:**
-- Zone X (minimal flood hazard): Preferred
-- Zone B/C (moderate flood hazard): Preferred
-- Zone A/AE (high flood hazard, no BFE): Acceptable with conditions
-- Zone AE (high flood hazard with BFE): Acceptable with conditions
-- Zone VE (coastal high hazard): Limited appetite, refer to underwriting
-
-**Territory:** All 50 states
-
-**Limits Available:**
-- Building: Up to [$AMOUNT]
-- Contents: Up to [$AMOUNT]
-- Total: Combined limits up to [$AMOUNT]
-
+    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900">
+          <svg class="w-5 h-5 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        Flexible Limits Structure
+      </h3>
+      <div class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <div class="flex justify-between"><span>Post-FIRM (single building/location):</span><strong class="text-slate-900 dark:text-white">Up to $10M</strong></div>
+        <div class="flex justify-between"><span>Pre-FIRM (single building/location):</span><strong class="text-slate-900 dark:text-white">Up to $5M</strong></div>
+        <div class="flex justify-between"><span>Max attachment per building:</span><strong class="text-slate-900 dark:text-white">$20M RC</strong></div>
+      </div>
+    </div>
+  </div>
 </div>
 
----
+## Acceptable Classes of Business
 
-## Flood Zone Determination
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 not-prose">
+  <div class="p-5 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900 dark:to-blue-900 border border-cyan-200 dark:border-cyan-700">
+    <div class="font-bold text-lg text-slate-900 dark:text-white mb-2">Commercial Buildings</div>
+    <p class="text-sm text-slate-600 dark:text-slate-400">Office, retail, industrial, and mixed-use commercial properties</p>
+  </div>
 
-Our platform automatically determines flood zone using:
+  <div class="p-5 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900 border border-blue-200 dark:border-blue-700">
+    <div class="font-bold text-lg text-slate-900 dark:text-white mb-2">Apartment Buildings</div>
+    <p class="text-sm text-slate-600 dark:text-slate-400">Multi-family residential complexes and apartment communities</p>
+  </div>
 
-1. **FEMA Flood Maps** - Current FEMA Flood Insurance Rate Maps (FIRMs)
-2. **First Street Foundation Data** - Advanced flood modeling including climate projections
-3. **USGS Elevation Data** - High-resolution terrain models
-4. **Historical Claims Data** - Actual loss experience in the area
+  <div class="p-5 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 border border-indigo-200 dark:border-indigo-700">
+    <div class="font-bold text-lg text-slate-900 dark:text-white mb-2">High Value Homes</div>
+    <p class="text-sm text-slate-600 dark:text-slate-400">Residential dwellings with replacement cost values above NFIP limits</p>
+  </div>
 
-This multi-source approach provides more accurate risk assessment than FEMA maps alone.
+  <div class="p-5 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900 dark:to-pink-900 border border-purple-200 dark:border-purple-700">
+    <div class="font-bold text-lg text-slate-900 dark:text-white mb-2">Dwelling Schedules</div>
+    <p class="text-sm text-slate-600 dark:text-slate-400">Multiple rental dwellings on a single master policy</p>
+  </div>
 
----
+  <div class="p-5 rounded-xl bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900 dark:to-rose-900 border border-pink-200 dark:border-pink-700">
+    <div class="font-bold text-lg text-slate-900 dark:text-white mb-2">Condo Associations</div>
+    <p class="text-sm text-slate-600 dark:text-slate-400">Condominium association master policies</p>
+  </div>
 
-## Elevation Requirements
-
-For properties in high-risk flood zones (A, AE, VE), we require:
-
-- **Elevation Certificate** - Showing the building's lowest floor elevation relative to Base Flood Elevation (BFE)
-- **Building Compliance** - Documentation that structure meets or exceeds local building codes
-- **Floodproofing Measures** - Details of any floodproofing or flood mitigation measures in place
-
-Properties with lowest floor elevation above BFE qualify for significantly reduced premiums.
-
----
-
-## Premium Factors
-
-Flood insurance premiums are determined by:
-
-1. **Flood Zone** - Higher risk zones (A, AE, VE) have higher rates than lower risk zones (B, C, X)
-2. **Elevation** - Buildings above BFE receive substantial discounts
-3. **Construction Type** - Elevated structures, flood-resistant materials earn credits
-4. **Deductible** - Higher deductibles reduce premium
-5. **Coverage Limits** - Amount of building and contents coverage
-6. **Building Age & Condition** - Newer buildings with modern construction may qualify for better rates
-7. **Prior Losses** - Flood loss history affects pricing
-
----
-
-## Deductible Options
-
-**Standard Deductibles:** [$AMOUNT], [$AMOUNT], [$AMOUNT], [$AMOUNT], [$AMOUNT]
-
-**Percentage Deductibles:** 2%, 3%, 5% of building limit (available for larger properties)
-
-Lower deductibles available for properties with minimal flood risk.
-
----
-
-## Application Requirements
-
-To provide a quote, we'll need:
-
-- Property address (for flood zone determination)
-- Building characteristics and square footage
-- Year built and construction type
-- Building and contents values
-- Elevation Certificate (for properties in SFHA zones)
-- Number of floors and basement information
-- Flood mitigation measures in place
-- Prior flood loss history
-- Current flood insurance details (if replacing existing policy)
-
----
-
-## Application Process
-
-<div class="space-y-4 my-12">
-
-### 1. Property Lookup
-Enter property address—our platform instantly determines flood zone and provides initial risk assessment.
-
-### 2. Building Details
-Provide building characteristics, elevation data (if available), and coverage needs.
-
-### 3. Instant Quote
-Receive your quote immediately with transparent pricing breakdown and coverage details.
-
-### 4. Underwriting Review
-Some higher-risk properties require brief underwriting review (typically [NUMBER] business days).
-
-### 5. Bind & Issue
-Bind coverage and receive policy documents. Coverage effective [NUMBER] days from bind date (or longer if required by lender).
-
+  <div class="p-5 rounded-xl bg-gradient-to-br from-rose-50 to-red-50 dark:from-rose-900 dark:to-red-900 border border-rose-200 dark:border-rose-700">
+    <div class="font-bold text-lg text-slate-900 dark:text-white mb-2">Individual Condo Units</div>
+    <p class="text-sm text-slate-600 dark:text-slate-400">Coverage for individual unit owners</p>
+  </div>
 </div>
 
----
+## Flood Restrictions
 
-## Flood Waiting Periods
-
-- **Standard Waiting Period:** [NUMBER] days from policy effective date
-- **Exceptions:** No waiting period if:
-  - Closing on a new property purchase (coverage must be in place at closing)
-  - Required by lender as condition of new loan
-  - Renewal or replacement of existing flood policy with no lapse
-
----
-
-## Claims Process
-
-Our streamlined claims process includes:
-
-1. **Immediate Reporting** - 24/7 claims reporting through our platform
-2. **Fast Response** - Adjuster assigned within [TIME PERIOD]
-3. **Advance Payments** - Partial payments available for covered immediate expenses
-4. **Direct Payment** - Payment to insured or lienholder as appropriate
-5. **Business Income** - Quick processing of business interruption claims
-
----
-
-## Excess Flood Coverage
-
-For properties needing limits above our standard maximums, we can arrange excess flood coverage in partnership with specialized carriers. Contact our underwriting team for details.
-
----
-
-## Get Started
-
-<div class="mt-12 p-8 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-
-Protect your commercial property from flood risk with modern, comprehensive coverage. Get an instant quote today.
-
-<div class="mt-6 flex gap-4">
-  <a href="https://app.gridironins.com" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-500 text-white hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 font-medium shadow-soft transition-colors">
-    Get a Quote
-  </a>
-  <a href="./contact" class="inline-flex items-center px-6 py-3 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 font-medium transition-colors">
-    Contact Underwriting
-  </a>
+<div class="my-12 p-8 rounded-2xl bg-red-50 dark:bg-red-950 border-l-4 border-red-500 not-prose">
+  <h3 class="text-xl font-bold text-red-900 dark:text-red-100 mb-4">Ineligible Risks</h3>
+  <div class="grid md:grid-cols-2 gap-4 text-sm text-red-800 dark:text-red-200">
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Less than 1/4 mile (0.25) to tidal water</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Less than 1/4 mile (0.25) to FEMA floodway</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>V-zones, CBRA-zones, Barrier Island locations</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Blanket coverage limits</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Builders risk / course of construction</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>More than -2 feet elevation difference to BFE</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Risks with prior flood losses</span>
+    </div>
+    <div class="flex items-start gap-2">
+      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Buildings over $20M RC value (max attachment)</span>
+    </div>
+  </div>
 </div>
 
+## Why Private Flood Over NFIP?
+
+<div class="grid md:grid-cols-3 gap-6 my-12 not-prose">
+  <div class="p-6 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white">
+    <h4 class="font-bold text-lg mb-3">Higher Limits</h4>
+    <p class="text-sm text-cyan-50">NFIP caps at $250K building / $100K contents. We go up to $10M per building for qualifying risks.</p>
+  </div>
+
+  <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+    <h4 class="font-bold text-lg mb-3">Immediate Coverage</h4>
+    <p class="text-sm text-blue-50">No 30-day waiting period. Coverage starts when you need it—perfect for closings and renewals.</p>
+  </div>
+
+  <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
+    <h4 class="font-bold text-lg mb-3">Better Service</h4>
+    <p class="text-sm text-indigo-50">Private market efficiency with dedicated underwriters and faster claims handling.</p>
+  </div>
 </div>
 
+## Contact Information
+
+<div class="my-12 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 not-prose">
+  <div class="text-center">
+    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-cyan-100 dark:bg-cyan-900 mb-4">
+      <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+      </svg>
+    </div>
+    <div class="font-bold text-2xl text-slate-900 dark:text-white mb-1">Justin Lussier</div>
+    <div class="text-slate-600 dark:text-slate-400 mb-4">Flood Underwriter</div>
+    <a href="mailto:jlussier@gridironins.com" class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-semibold">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      jlussier@gridironins.com
+    </a>
+  </div>
 </div>

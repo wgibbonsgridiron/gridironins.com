@@ -1,0 +1,46 @@
+---
+interface Props {
+  states: string[];
+  title?: string;
+  columns?: number;
+}
+
+const { states = [], title = "Coverage Available", columns = 5 } = Astro.props;
+
+const stateNames: Record<string, string> = {
+  'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
+  'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
+  'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa',
+  'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
+  'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri',
+  'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey',
+  'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio',
+  'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
+  'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont',
+  'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
+  'DC': 'Washington DC'
+};
+
+const gridCols = {
+  3: 'md:grid-cols-3',
+  4: 'md:grid-cols-4',
+  5: 'md:grid-cols-5',
+  6: 'md:grid-cols-6'
+};
+---
+
+<div class="not-prose my-12 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg">
+  <div class="text-center mb-8">
+    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">{title}</h3>
+    <p class="text-slate-600 dark:text-slate-400">Coverage available in <strong>{states.length}</strong> {states.length === 1 ? 'state' : 'states'}</p>
+  </div>
+
+  <div class={`grid grid-cols-2 ${gridCols[columns as keyof typeof gridCols] || 'md:grid-cols-5'} gap-3`}>
+    {states.map((state) => (
+      <div class="flex items-center gap-2 p-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 transition-colors">
+        <div class="w-2 h-2 rounded-full bg-brand-500 dark:bg-brand-600 flex-shrink-0"></div>
+        <span class="text-sm font-medium text-slate-900 dark:text-white">{stateNames[state.toUpperCase()] || state}</span>
+      </div>
+    ))}
+  </div>
+</div>

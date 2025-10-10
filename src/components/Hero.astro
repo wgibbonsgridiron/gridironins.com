@@ -1,5 +1,6 @@
 ---
 const { eyebrow = 'Exclusive, coverage conscious, adaptable solutions', title, subtitle, ctaHref = 'https://app.gridironins.com', ctaText = 'Launch App' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <section class="relative overflow-hidden bg-white dark:bg-slate-950 transition-colors">
   <div class="absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_20%_20%,#CDD7ED,transparent)] dark:bg-[radial-gradient(900px_circle_at_20%_20%,rgba(41,101,176,0.1),transparent)]"></div>
@@ -17,7 +18,7 @@ const { eyebrow = 'Exclusive, coverage conscious, adaptable solutions', title, s
           </svg>
           {ctaText}
         </a>
-        <a href="/products" class="inline-flex items-center justify-center rounded-lg px-8 py-4 border-2 border-slate-300 dark:border-slate-600 hover:border-brand-500 dark:hover:border-brand-500 text-slate-900 dark:text-slate-100 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+        <a href={`${base}products`} class="inline-flex items-center justify-center rounded-lg px-8 py-4 border-2 border-slate-300 dark:border-slate-600 hover:border-brand-500 dark:hover:border-brand-500 text-slate-900 dark:text-slate-100 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
           Explore products
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

@@ -1,3 +1,6 @@
+---
+const base = import.meta.env.BASE_URL;
+---
 <section class="max-w-7xl mx-auto px-4 py-16 bg-white dark:bg-slate-950 transition-colors">
   <div class="rounded-2xl bg-gradient-to-br from-brand-600 to-brand-900 dark:from-brand-700 dark:to-brand-950 p-8 md:p-12 relative overflow-hidden shadow-2xl">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent)]"></div>
@@ -13,7 +16,7 @@
           </svg>
           Launch App
         </a>
-        <a href="./contact" class="inline-flex items-center justify-center rounded-lg px-8 py-3 border-2 border-white text-white hover:bg-white/10 font-semibold transition-all">
+        <a href={`${base}contact`} class="inline-flex items-center justify-center rounded-lg px-8 py-3 border-2 border-white text-white hover:bg-white/10 font-semibold transition-all">
           Contact Sales
         </a>
       </div>
