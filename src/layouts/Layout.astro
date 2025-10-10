@@ -1,16 +1,19 @@
 ---
+import "../styles/global.css";
+import logo from "../assets/gridiron-logo-borderless.png";
+
 const {
   title = 'Gridiron Insurance',
   description = 'Modern MGA/MGU solutions across Property, Flood, Excess Liability, and Inland Marine.',
   url = 'https://gridironins.com',
   image = '/og-default.png'
 } = Astro.props;
-import "../styles/global.css";
 ---
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
@@ -82,53 +85,85 @@ import "../styles/global.css";
       });
     </script>
   </head>
-  <body class="font-body">
-    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700 transition-colors">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-          <img src="/logo.svg" alt="Gridiron" class="h-8 w-auto" />
-          <span class="sr-only">Gridiron Insurance</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" href="/products">Products</a>
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" href="/about">About</a>
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" href="/team">Team</a>
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" href="/contact">Contact</a>
-          <button onclick="toggleTheme()" aria-label="Toggle theme" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-            <svg id="sun-icon" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
-            <svg id="moon-icon" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-            </svg>
-          </button>
-          <a class="inline-flex items-center rounded-md px-4 py-2 bg-brand-500 text-white hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 shadow-soft transition-colors" href="https://app.gridironins.com">
-            Launch App
+  <body class="font-body min-h-screen bg-white dark:bg-slate-950">
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+            <img src={logo.src} alt="Gridiron Insurance" class="h-10 w-auto" />
           </a>
-        </nav>
-        <div class="md:hidden flex items-center gap-2">
-          <button onclick="toggleTheme()" aria-label="Toggle theme" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-            <svg id="sun-icon-mobile" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
-            <svg id="moon-icon-mobile" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-            </svg>
-          </button>
-          <button class="p-2" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('hidden')">
-            <svg class="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/products">Products</a>
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/about">About</a>
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/team">Team</a>
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/contact">Contact</a>
+
+            <!-- Theme Toggle -->
+            <button
+              onclick="toggleTheme()"
+              aria-label="Toggle theme"
+              class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+              <svg id="sun-icon" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <svg id="moon-icon" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+
+            <!-- CTA Button -->
+            <a
+              class="inline-flex items-center justify-center rounded-lg px-5 py-2.5 bg-brand-600 text-white font-semibold hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 shadow-lg transition-all"
+              href="https://app.gridironins.com"
+            >
+              Launch App
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center gap-2">
+            <button
+              onclick="toggleTheme()"
+              aria-label="Toggle theme"
+              class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+              <svg id="sun-icon-mobile" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <svg id="moon-icon-mobile" class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+            <button
+              class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              aria-label="Toggle menu"
+              onclick="document.getElementById('mnav').classList.toggle('hidden')"
+            >
+              <svg class="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
-      <div id="mnav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400" href="/products">Products</a>
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400" href="/about">About</a>
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400" href="/team">Team</a>
-          <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400" href="/contact">Contact</a>
-          <a class="inline-flex items-center rounded-md px-3 py-2 bg-brand-500 text-black dark:text-white hover:bg-red-500 hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 w-max" href="https://app.gridironins.com">Launch App</a>
+
+        <!-- Mobile Navigation -->
+        <div id="mnav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+          <nav class="py-4 flex flex-col gap-4">
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/products">Products</a>
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/about">About</a>
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/team">Team</a>
+            <a class="text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors" href="/contact">Contact</a>
+            <a
+              class="inline-flex items-center justify-center rounded-lg px-4 py-2.5 bg-brand-600 text-white font-semibold hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 shadow-lg transition-all w-full"
+              href="https://app.gridironins.com"
+            >
+              Launch App
+            </a>
+          </nav>
         </div>
       </div>
     </header>
@@ -137,30 +172,47 @@ import "../styles/global.css";
       <slot />
     </main>
 
-    <footer class="border-t border-slate-200 dark:border-slate-700 mt-20 bg-white dark:bg-slate-900 transition-colors">
-      <div class="max-w-7xl mx-auto px-4 py-12 grid gap-6 md:grid-cols-3 text-sm">
-        <div>
-          <img src="/logo.svg" alt="Gridiron" class="h-7 w-auto mb-3" />
-          <p class="text-slate-600 dark:text-slate-400">Purpose-built insurance solutions with speed and clarity.</p>
+    <footer class="border-t border-slate-200 dark:border-slate-800 mt-20 bg-slate-50 dark:bg-slate-900 transition-colors">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid gap-8 md:grid-cols-3 lg:gap-12">
+          <!-- Brand Column -->
+          <div>
+            <img src={logo.src} alt="Gridiron Insurance" class="h-9 w-auto mb-4" />
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Purpose-built insurance solutions with speed and clarity.
+            </p>
+          </div>
+
+          <!-- Company Links -->
+          <div>
+            <h3 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Company</h3>
+            <ul class="space-y-2">
+              <li><a href="/about" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a></li>
+              <li><a href="/team" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Team</a></li>
+              <li><a href="/products" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Products</a></li>
+              <li><a href="/privacy" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Privacy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Links -->
+          <div>
+            <h3 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Get in touch</h3>
+            <ul class="space-y-2">
+              <li><a href="/contact" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a></li>
+              <li>
+                <a href="mailto:hello@gridironins.com" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                  hello@gridironins.com
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <div class="font-medium mb-2 text-slate-900 dark:text-slate-100">Company</div>
-          <ul class="space-y-1">
-            <li><a href="/about" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400">About</a></li>
-            <li><a href="/team" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400">Team</a></li>
-            <li><a href="/products" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400">Products</a></li>
-            <li><a href="/privacy" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400">Privacy</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-medium mb-2 text-slate-900 dark:text-slate-100">Get in touch</div>
-          <ul class="space-y-1">
-            <li><a href="/contact" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400">Contact</a></li>
-            <li><a href="mailto:hello@gridironins.com" class="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400">hello@gridironins.com</a></li>
-          </ul>
+
+        <!-- Copyright -->
+        <div class="border-t border-slate-200 dark:border-slate-800 mt-8 pt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+          © {new Date().getFullYear()} Gridiron Insurance. All rights reserved.
         </div>
       </div>
-      <div class="border-t border-slate-200 dark:border-slate-700 py-6 text-center text-xs text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} Gridiron Insurance</div>
     </footer>
   </body>
 </html>

@@ -1,100 +1,99 @@
 @import "tailwindcss";
 
-@variant dark (.dark &);
+@custom-variant dark (&:where(.dark, .dark *));
 
-/* Base styles with modern typography */
-@layer base {
-  * {
-    border-color: rgb(226 232 240);
-  }
+/* ===================================
+   Theme Variables
+   =================================== */
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+@theme {
+  /* Brand Colors - Based on logo blue #2563EB */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+  --color-brand-950: #172554;
 
-  body {
-    background-color: white;
-    color: rgb(15 23 42);
-    transition: background-color 0.3s, color 0.3s;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-  }
+  /* Semantic Colors - Light Mode */
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
 
-  .dark body {
-    background-color: rgb(15 23 42);
-    color: rgb(248 250 252);
-  }
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-inverse: #ffffff;
 
-  .dark * {
-    border-color: rgb(51 65 85);
-  }
+  --color-primary: var(--color-brand-600);
+  --color-primary-hover: var(--color-brand-700);
+  --color-primary-light: var(--color-brand-50);
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-soft: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
 
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-  }
+/* Dark Mode Theme */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-surface-elevated: #334155;
+    --color-border: #334155;
+    --color-border-light: #475569;
 
-  h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-  }
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #cbd5e1;
+    --color-text-tertiary: #94a3b8;
+    --color-text-inverse: #0f172a;
 
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
+    --color-primary: var(--color-brand-500);
+    --color-primary-hover: var(--color-brand-400);
+    --color-primary-light: var(--color-brand-950);
 
-  h4 {
-    @apply text-xl md:text-2xl;
-  }
-
-  p {
-    @apply leading-relaxed;
-  }
-
-  a {
-    @apply transition-colors duration-200;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    @apply w-2;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-400 dark:bg-slate-600;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+    --shadow-soft: 0 2px 8px rgba(59, 130, 246, 0.2);
   }
 }
 
-/* Utility classes */
-@layer utilities {
-  .shadow-soft {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  }
+/* Dark Mode Override (when .dark class is present) */
+.dark {
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-elevated: #334155;
+  --color-border: #334155;
+  --color-border-light: #475569;
 
-  .shadow-soft-lg {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-text-inverse: #0f172a;
 
-  .gradient-brand {
-    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
-  }
+  --color-primary: var(--color-brand-500);
+  --color-primary-hover: var(--color-brand-400);
+  --color-primary-light: var(--color-brand-950);
 
-  .gradient-text {
-    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-soft: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

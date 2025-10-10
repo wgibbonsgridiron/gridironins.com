@@ -1,18 +1,18 @@
 ---
 const { eyebrow = 'Built for brokers and insureds', title, subtitle, ctaHref = 'https://app.gridironins.com', ctaText = 'Launch App' } = Astro.props;
 ---
-<section class="relative overflow-hidden bg-white dark:bg-slate-900 transition-colors">
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_20%_20%,#e3edff,transparent)] dark:bg-[radial-gradient(900px_circle_at_20%_20%,rgba(14,165,233,0.15),transparent)]"></div>
+<section class="relative overflow-hidden bg-white dark:bg-slate-950 transition-colors">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_20%_20%,#dbeafe,transparent)] dark:bg-[radial-gradient(900px_circle_at_20%_20%,rgba(37,99,235,0.1),transparent)]"></div>
   <div class="max-w-7xl mx-auto px-4 py-20 md:py-28">
     <div class="max-w-3xl">
-      <p class="text-brand-700 dark:text-brand-400 font-medium">{eyebrow}</p>
-      <h1 class="mt-3 text-4xl md:text-6xl font-bold tracking-tight leading-tight text-slate-900 dark:text-slate-50">
+      <p class="text-brand-600 dark:text-brand-400 font-semibold uppercase text-sm tracking-wide">{eyebrow}</p>
+      <h1 class="mt-3 text-4xl md:text-6xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white">
         {title}
       </h1>
-      <p class="mt-5 text-lg text-slate-700 dark:text-slate-300">{subtitle}</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href={ctaHref} class="rounded-md px-5 py-3 bg-brand-500 text-white hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 shadow-soft transition-colors">{ctaText}</a>
-        <a href="/products" class="rounded-md px-5 py-3 border border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 text-slate-900 dark:text-slate-100 transition-colors">Explore products</a>
+      <p class="mt-5 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">{subtitle}</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href={ctaHref} class="inline-flex items-center justify-center rounded-lg px-6 py-3 bg-brand-600 text-white font-semibold hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 shadow-lg hover:shadow-xl transition-all">{ctaText}</a>
+        <a href="/products" class="inline-flex items-center justify-center rounded-lg px-6 py-3 border-2 border-slate-300 dark:border-slate-600 hover:border-brand-500 dark:hover:border-brand-500 text-slate-900 dark:text-slate-100 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">Explore products</a>
       </div>
     </div>
   </div>
