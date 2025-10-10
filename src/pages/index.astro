@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProductGrid from '../components/ProductGrid.astro';
+import CTA from '../components/CTA.astro';
+
+const t = 'Insurance built for the way modern teams actually work.';
+const d = 'Quote, bind, and issue across Property, Flood, Excess Liability, and Inland Marine with speed and control.';
+---
+<Layout title={`Gridiron Insurance | ${t}`} description={d} url="https://gridironins.com/">
+  <Hero title={t} subtitle={d} />
+  <section class="max-w-7xl mx-auto px-4 py-12 grid gap-6 md:grid-cols-3">
+    <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 hover:shadow-lg transition-all duration-300">
+      <div class="text-lg font-medium text-slate-900 dark:text-slate-100">Fast quotes</div>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">Streamlined forms, sensible defaults, and immediate feedback.</p>
+    </div>
+    <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 hover:shadow-lg transition-all duration-300">
+      <div class="text-lg font-medium text-slate-900 dark:text-slate-100">Clear terms</div>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">Transparent coverage details and tidy documents.</p>
+    </div>
+    <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 hover:shadow-lg transition-all duration-300">
+      <div class="text-lg font-medium text-slate-900 dark:text-slate-100">Broker-friendly</div>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">Invite teams, track submissions, and keep momentum.</p>
+    </div>
+  </section>
+  <ProductGrid />
+  <CTA />
+</Layout>
+
