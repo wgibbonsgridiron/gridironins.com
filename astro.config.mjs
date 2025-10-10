@@ -14,4 +14,5 @@ export default defineConfig({
   },
 
   integrations: [sitemap(), mdx()],
+  site: 'https://wgibbonsgridiron.github.io/gridironins.com/',
 });
