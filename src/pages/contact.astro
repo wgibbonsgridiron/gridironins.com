@@ -2,69 +2,126 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Contact | Gridiron Insurance" description="Reach our team." url="https://gridironins.com/contact">
-  <section class="max-w-3xl mx-auto px-4 py-16">
-    <div class="mb-8">
-      <h1 class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Get in Touch</h1>
-      <p class="mt-3 text-lg text-slate-600 dark:text-slate-400">
-        Have questions about our products or want to discuss a specific risk? We're here to help.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-        <h3 class="font-semibold text-lg mb-2 text-slate-900 dark:text-slate-100">Email</h3>
-        <a href="mailto:hello@gridironins.com" class="text-brand-600 dark:text-brand-400 hover:underline">
-          hello@gridironins.com
-        </a>
-      </div>
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-        <h3 class="font-semibold text-lg mb-2 text-slate-900 dark:text-slate-100">Phone</h3>
-        <a href="tel:+15551234500" class="text-brand-600 dark:text-brand-400 hover:underline">
-          (555) 123-4500
-        </a>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-white dark:bg-slate-950 transition-colors">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(800px_circle_at_60%_50%,#CDD7ED,transparent)] dark:bg-[radial-gradient(800px_circle_at_60%_50%,rgba(41,101,176,0.1),transparent)]"></div>
+    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-brand-600 dark:text-brand-400 font-semibold uppercase text-sm tracking-wide">Contact Us</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white">
+          Let's talk about your insurance needs
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+          Have questions about our products or want to discuss a specific risk? Our team is here to help you find the right coverage.
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="p-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg">
-      <h2 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-slate-100">Send us a message</h2>
-      <form class="grid gap-4" onsubmit="return submitForm(event)">
-        <label class="grid gap-2">
-          <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Name *</span>
-          <input name="name" required class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 transition-colors" />
-        </label>
-        <label class="grid gap-2">
-          <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Email *</span>
-          <input type="email" name="email" required class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 transition-colors" />
-        </label>
-        <label class="grid gap-2">
-          <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Company</span>
-          <input name="company" class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 transition-colors" />
-        </label>
-        <label class="grid gap-2">
-          <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Message *</span>
-          <textarea name="message" rows="6" required class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 transition-colors"></textarea>
-        </label>
-        <button class="rounded-lg px-6 py-3 bg-brand-500 text-white hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 font-medium shadow-soft transition-colors w-full md:w-auto">
-          Send Message
-        </button>
-        <p id="contact-status" class="text-sm text-slate-600 dark:text-slate-400"></p>
-      </form>
-    </div>
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+      <!-- Contact Methods -->
+      <div class="lg:col-span-1 space-y-6">
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-lg bg-brand-100 dark:bg-brand-900 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-slate-100">Email</h3>
+          <a href="mailto:hello@gridironins.com" class="text-brand-600 dark:text-brand-400 hover:underline font-medium">
+            hello@gridironins.com
+          </a>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">We typically respond within 24 hours</p>
+        </div>
 
-    <div class="mt-12 p-6 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-      <h3 class="font-semibold text-lg mb-3 text-slate-900 dark:text-slate-100">Prefer to speak with someone directly?</h3>
-      <p class="text-slate-600 dark:text-slate-400 mb-4">
-        Our underwriting team is available Monday-Friday, 9am-5pm EST. For urgent matters, please call our main line.
-      </p>
-      <div class="flex gap-4">
-        <a href="tel:+15551234500" class="inline-flex items-center px-5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500 font-medium transition-colors">
-          Call Us
-        </a>
-        <a href="https://app.gridironins.com" class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-500 text-white hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 font-medium transition-colors">
-          Launch App
-        </a>
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-lg bg-brand-100 dark:bg-brand-900 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-slate-100">Phone</h3>
+          <a href="tel:+15551234500" class="text-brand-600 dark:text-brand-400 hover:underline font-medium">
+            (555) 123-4500
+          </a>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Mon-Fri, 9am-5pm EST</p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-gradient-to-br from-brand-50 to-tertiary dark:from-brand-950 dark:to-slate-900">
+          <h3 class="font-bold text-lg mb-2 text-slate-900 dark:text-slate-100">Office Hours</h3>
+          <div class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+            <div class="flex justify-between">
+              <span class="font-medium">Monday - Friday</span>
+              <span>9am - 5pm EST</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-medium">Saturday - Sunday</span>
+              <span>Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-2">
+        <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg">
+          <h2 class="text-2xl font-bold mb-2 text-slate-900 dark:text-slate-100">Send us a message</h2>
+          <p class="text-slate-600 dark:text-slate-400 mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
+          <form class="grid gap-5" onsubmit="return submitForm(event)">
+            <div class="grid md:grid-cols-2 gap-5">
+              <label class="grid gap-2">
+                <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Name *</span>
+                <input name="name" required class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:border-transparent transition-all" placeholder="John Doe" />
+              </label>
+              <label class="grid gap-2">
+                <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email *</span>
+                <input type="email" name="email" required class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:border-transparent transition-all" placeholder="john@company.com" />
+              </label>
+            </div>
+            <label class="grid gap-2">
+              <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Company</span>
+              <input name="company" class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:border-transparent transition-all" placeholder="Your company name" />
+            </label>
+            <label class="grid gap-2">
+              <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Message *</span>
+              <textarea name="message" rows="6" required class="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:focus:ring-brand-400 focus:border-transparent transition-all resize-none" placeholder="Tell us about your insurance needs..."></textarea>
+            </label>
+            <div class="flex items-center gap-4">
+              <button class="rounded-lg px-8 py-3 bg-brand-600 text-white hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 font-semibold shadow-lg hover:shadow-xl transition-all">
+                Send Message
+              </button>
+              <p id="contact-status" class="text-sm text-slate-600 dark:text-slate-400"></p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+
+    <!-- Quick Actions -->
+    <div class="mt-16 p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700">
+      <div class="max-w-3xl mx-auto text-center">
+        <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-slate-100">Prefer to speak with someone directly?</h3>
+        <p class="text-slate-600 dark:text-slate-400 mb-6">
+          Our underwriting team is available Monday-Friday, 9am-5pm EST. For urgent matters, please call our main line.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="tel:+15551234500" class="inline-flex items-center px-6 py-3 rounded-lg border-2 border-slate-300 dark:border-slate-600 hover:border-brand-500 dark:hover:border-brand-500 font-semibold transition-all">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            Call Us
+          </a>
+          <a href="https://app.gridironins.com" class="inline-flex items-center px-6 py-3 rounded-lg bg-brand-600 text-white hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 font-semibold shadow-lg transition-all">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            Launch App
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <script>
       async function submitForm(e: any){

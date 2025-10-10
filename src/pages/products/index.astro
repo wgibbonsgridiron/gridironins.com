@@ -3,59 +3,137 @@ import Layout from '../../layouts/Layout.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
 ---
 <Layout title="Products | Gridiron Insurance" description="Inland Marine, Excess Liability, Property, Primary Flood, and Contractors Equipment.">
-  <section class="max-w-7xl mx-auto px-4 py-16">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Our Products</h1>
-      <p class="mt-4 text-xl text-slate-600 dark:text-slate-400">
-        Modern commercial insurance solutions built for speed and clarity. Quote, bind, and issue across multiple coverage lines with our streamlined platform.
-      </p>
-    </div>
-
-    <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl">
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-        <div class="w-12 h-12 rounded-lg bg-brand-100 dark:bg-brand-900 flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Fast Quotes</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Get indicative quotes in minutes with our streamlined application process.</p>
-      </div>
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-        <div class="w-12 h-12 rounded-lg bg-brand-100 dark:bg-brand-900 flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Instant Binding</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Bind coverage immediately when you're ready to move forward.</p>
-      </div>
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-        <div class="w-12 h-12 rounded-lg bg-brand-100 dark:bg-brand-900 flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Clean Documents</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400">Receive clear, professional policy documents instantly.</p>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-white dark:bg-slate-950 transition-colors">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_70%_40%,#CDD7ED,transparent)] dark:bg-[radial-gradient(900px_circle_at_70%_40%,rgba(41,101,176,0.1),transparent)]"></div>
+    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-brand-600 dark:text-brand-400 font-semibold uppercase text-sm tracking-wide">Commercial Insurance Products</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white">
+          Coverage built for speed and clarity
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+          Quote, bind, and issue across multiple commercial lines with our streamlined platform. Modern solutions for Property, Flood, Excess Liability, and Inland Marine.
+        </p>
       </div>
     </div>
   </section>
+
+  <!-- Key Features -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-10 text-center">Why Choose Gridiron?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="group p-8 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-xl hover:border-brand-300 dark:hover:border-brand-600 transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Fast Quotes</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          Get indicative quotes in minutes with our streamlined application process. No more waiting days for a simple indication.
+        </p>
+      </div>
+
+      <div class="group p-8 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-xl hover:border-brand-300 dark:hover:border-brand-600 transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Instant Binding</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          Bind coverage immediately when you're ready to move forward. Real-time approvals and instant policy issuance.
+        </p>
+      </div>
+
+      <div class="group p-8 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-xl hover:border-brand-300 dark:hover:border-brand-600 transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Clean Documents</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          Receive clear, professional policy documents instantly. No jargon, no confusion—just transparent coverage terms.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
   <ProductGrid />
 
+  <!-- Process Section -->
   <section class="max-w-7xl mx-auto px-4 py-16">
-    <div class="rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 p-8 md:p-12 text-white text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-lg text-brand-50 max-w-2xl mx-auto mb-6">
-        Experience the difference of modern insurance technology. Launch our platform and get your first quote in minutes.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="https://app.gridironins.com" class="inline-flex items-center px-6 py-3 rounded-lg bg-white text-brand-600 hover:bg-brand-50 font-medium shadow-lg transition-colors">
-          Launch App
-        </a>
-        <a href="/contact" class="inline-flex items-center px-6 py-3 rounded-lg border-2 border-white text-white hover:bg-white/10 font-medium transition-colors">
-          Contact Sales
-        </a>
+    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 text-center">Simple Process, Powerful Results</h2>
+    <p class="text-lg text-slate-600 dark:text-slate-400 text-center max-w-2xl mx-auto mb-12">
+      Our streamlined workflow gets you from quote to policy in record time.
+    </p>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="relative">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-brand-100 dark:bg-brand-900 border-4 border-brand-600 dark:border-brand-500 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-brand-600 dark:text-brand-400">1</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Submit Application</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Complete our streamlined application form with guided inputs.</p>
+        </div>
+        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-brand-300 to-transparent dark:from-brand-700 -ml-3"></div>
+      </div>
+
+      <div class="relative">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-brand-100 dark:bg-brand-900 border-4 border-brand-600 dark:border-brand-500 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-brand-600 dark:text-brand-400">2</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Get Quote</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Receive indicative pricing and terms in minutes, not days.</p>
+        </div>
+        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-brand-300 to-transparent dark:from-brand-700 -ml-3"></div>
+      </div>
+
+      <div class="relative">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-brand-100 dark:bg-brand-900 border-4 border-brand-600 dark:border-brand-500 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-brand-600 dark:text-brand-400">3</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Bind Coverage</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Accept terms and bind instantly through our platform.</p>
+        </div>
+        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-brand-300 to-transparent dark:from-brand-700 -ml-3"></div>
+      </div>
+
+      <div>
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-brand-100 dark:bg-brand-900 border-4 border-brand-600 dark:border-brand-500 flex items-center justify-center mb-4">
+            <span class="text-2xl font-bold text-brand-600 dark:text-brand-400">4</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Issue Policy</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400">Receive your policy documents immediately upon binding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="rounded-2xl bg-gradient-to-br from-brand-600 to-brand-900 dark:from-brand-700 dark:to-brand-950 p-8 md:p-12 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.1),transparent)]"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
+        <p class="text-lg text-brand-50 max-w-2xl mx-auto mb-8">
+          Experience the difference of modern insurance technology. Launch our platform and get your first quote in minutes.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="https://app.gridironins.com" class="inline-flex items-center px-6 py-3 rounded-lg bg-white text-brand-600 hover:bg-brand-50 font-semibold shadow-lg hover:shadow-xl transition-all">
+            Launch App
+          </a>
+          <a href="/contact" class="inline-flex items-center px-6 py-3 rounded-lg border-2 border-white text-white hover:bg-white/10 font-semibold transition-all">
+            Contact Sales
+          </a>
+        </div>
       </div>
     </div>
   </section>
