@@ -12,6 +12,15 @@ states: "10 States"
 minPremium: "Varies"
 ---
 
+import USMap from '../../components/USMap.astro';
+import { productStates } from '../../data/productStates';
+
+<div class="my-16">
+  <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">Available States</h2>
+  <USMap highlightedStates={productStates['property'].states} class="max-w-5xl mx-auto" />
+  <p class="text-center text-sm text-slate-600 dark:text-slate-400 mt-4">Non-admitted coverage in 10 coastal states</p>
+</div>
+
 <div class="grid md:grid-cols-3 gap-6 my-12 not-prose">
   <div class="p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950 border border-orange-200 dark:border-orange-800">
     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-700 flex items-center justify-center mb-4">
@@ -47,10 +56,6 @@ minPremium: "Varies"
 ## Coverage Overview
 
 Our **non-admitted commercial property program** serves challenging coastal markets across 10 states. We write property with wind, AOP-only coverage, and can package with General Liability (compatible with our Easy Excess program) and Flood coverage.
-
-### Active States (Non-Admitted)
-
-TX, LA, MS, AL, FL, GA, SC, NC, NJ, NY
 
 <div class="my-12 not-prose">
   <div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">

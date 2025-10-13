@@ -13,7 +13,15 @@
       "Bash(node:*)",
       "Bash(del calculate-state-centers.js update-labels.js state-centers.json)",
       "Bash(paste -:*)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "WebSearch",
+      "WebFetch(domain:simplemaps.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(findstr:*)",
+      "Bash(test:*)"
     ],
     "deny": [],
     "ask": []

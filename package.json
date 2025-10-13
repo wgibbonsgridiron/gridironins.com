@@ -13,6 +13,13 @@
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.14.1",
-    "tailwindcss": "^4.1.14"
+    "d3-geo": "^3.1.1",
+    "tailwindcss": "^4.1.14",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.0",
+    "@types/topojson-client": "^3.1.5"
   }
 }

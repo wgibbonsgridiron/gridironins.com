@@ -12,18 +12,19 @@ description: "Fast general liability coverage for small to midsize artisan contr
 url: "https://gridironins.com/products/contractors-general-liability"
 ---
 
-import StateList from '../../components/StateList.astro';
+import USMap from '../../components/USMap.astro';
+import { productStates } from '../../data/productStates';
 import FeatureCard from '../../components/FeatureCard.astro';
 import TeamCard from '../../components/TeamCard.astro';
 import StatCard from '../../components/StatCard.astro';
 
 <div class="max-w-7xl mx-auto">
 
-<StateList
-  states={['WA', 'OR', 'CA', 'TX', 'LA', 'MS', 'AL', 'GA', 'FL', 'SC', 'NC', 'VA', 'NJ', 'PA', 'CT']}
-  title="Coverage Available"
-  columns={5}
-/>
+<div class="my-16">
+  <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">Coverage Available</h2>
+  <USMap highlightedStates={productStates['contractors-equipment'].states} class="max-w-5xl mx-auto" />
+  <p class="text-center text-sm text-slate-600 dark:text-slate-400 mt-4">Available in 15 states across West Coast, Southern, and select Northeast regions</p>
+</div>
 
 ## Fast General Liability for Trade Contractors
 

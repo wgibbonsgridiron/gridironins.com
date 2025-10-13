@@ -13,10 +13,12 @@ minPremium: "Varies"
 ---
 
 import USMap from '../../components/USMap.astro';
+import { productStates } from '../../data/productStates';
 
 <div class="my-16">
-  <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">Available States</h2>
-  <USMap filledStates={['WA', 'OR', 'CA', 'NV', 'ID', 'MT', 'WY', 'UT', 'AZ', 'NM', 'CO', 'ND', 'SD', 'NE', 'KS', 'OK', 'TX', 'MN', 'IA', 'MO', 'AR', 'LA', 'WI', 'IL', 'MS', 'MI', 'IN', 'TN', 'AL', 'OH', 'WV', 'VA', 'NC', 'SC', 'GA', 'FL', 'PA', 'VT', 'NH', 'MA', 'RI', 'CT', 'NJ', 'DE', 'MD', 'DC', 'ME', 'AK', 'HI']} class="max-w-5xl mx-auto" />
+  <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">Coverage Available</h2>
+  <USMap highlightedStates={productStates['excess-liability'].states} class="max-w-5xl mx-auto" />
+  <p class="text-center text-sm text-slate-600 dark:text-slate-400 mt-4">Available in 48 states (all except Kentucky and New York)</p>
 </div>
 
 ## Why Choose Our Excess Liability Program
