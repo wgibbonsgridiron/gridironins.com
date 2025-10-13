@@ -1,0 +1,38 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#2965b0"/>
+
+  <!-- Gradient Overlay -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2965b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3666;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#CDD7ED;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#2965b0;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#grad)"/>
+  <circle cx="900" cy="400" r="400" fill="url(#glow)"/>
+
+  <!-- Content -->
+  <text x="100" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">
+    Gridiron Insurance
+  </text>
+
+  <text x="100" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="400" fill="#CDD7ED">
+    Modern MGA/MGU Solutions
+  </text>
+
+  <text x="100" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#ffffff" opacity="0.9">
+    Property • Flood • Excess Liability • Inland Marine
+  </text>
+
+  <!-- Bottom Bar -->
+  <rect y="570" width="1200" height="60" fill="#0f3666" opacity="0.5"/>
+  <text x="100" y="608" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#ffffff">
+    gridironins.com
+  </text>
+</svg>

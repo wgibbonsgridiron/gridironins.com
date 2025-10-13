@@ -21,7 +21,8 @@
       "Bash(curl:*)",
       "WebFetch(domain:commons.wikimedia.org)",
       "Bash(findstr:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(npm run build)"
     ],
     "deny": [],
     "ask": []

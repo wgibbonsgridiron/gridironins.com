@@ -1,0 +1,294 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Broker Portal | Gridiron Insurance"
+  description="Partner with Gridiron Insurance. Fast appointments, competitive commissions, and modern technology for brokers and agents."
+  url="https://gridironins.com/brokers"
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-white dark:bg-slate-950 transition-colors">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(900px_circle_at_70%_40%,#CDD7ED,transparent)] dark:bg-[radial-gradient(900px_circle_at_70%_40%,rgba(41,101,176,0.1),transparent)]"></div>
+    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-brand-600 dark:text-brand-400 font-semibold uppercase text-sm tracking-wide">Broker Partnership</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-bold tracking-tight leading-tight text-slate-900 dark:text-white">
+          Partner with a Modern MGA
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+          Join hundreds of brokers who are growing their commercial book with Gridiron's fast, transparent, and profitable insurance solutions.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href={`${base}contact`}
+            class="inline-flex items-center px-8 py-4 rounded-lg bg-brand-600 text-white hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 font-semibold shadow-lg transition-all"
+          >
+            Get Appointed
+          </a>
+          <a
+            href="https://app.gridironins.com"
+            class="inline-flex items-center px-8 py-4 rounded-lg border-2 border-brand-600 dark:border-brand-500 text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/30 font-semibold transition-all"
+          >
+            Agent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Partner with Us -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center">Why Brokers Choose Gridiron</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="fade-in p-8 rounded-2xl bg-gradient-to-br from-brand-50 to-blue-50 dark:from-brand-950 dark:to-blue-950 border border-brand-200 dark:border-brand-800">
+        <div class="w-14 h-14 rounded-xl bg-brand-600 dark:bg-brand-500 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Lightning-Fast Quotes</h3>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Get indicative quotes in minutes, not days. Most online portals deliver instant quotes with real-time binding authority for qualified risks.
+        </p>
+      </div>
+
+      <div class="fade-in delay-100 p-8 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950 dark:to-teal-950 border border-emerald-200 dark:border-emerald-800">
+        <div class="w-14 h-14 rounded-xl bg-emerald-600 dark:bg-emerald-500 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Competitive Commissions</h3>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Earn competitive commissions with transparent structures. We offer volume bonuses and special program incentives for high producers.
+        </p>
+      </div>
+
+      <div class="fade-in delay-200 p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950 dark:to-purple-950 border border-violet-200 dark:border-violet-800">
+        <div class="w-14 h-14 rounded-xl bg-violet-600 dark:bg-violet-500 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Modern Technology</h3>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Access our full-featured web platform and mobile app. Track submissions, manage policies, and communicate with underwriters seamlessly.
+        </p>
+      </div>
+
+      <div class="fade-in p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-slate-800 dark:bg-slate-700 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Dedicated Support</h3>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Direct access to experienced underwriters who understand your market. No call centers—real people who know your business.
+        </p>
+      </div>
+
+      <div class="fade-in delay-100 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-slate-800 dark:bg-slate-700 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">A-Rated Carriers</h3>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          All programs backed by financially strong carriers with A or better AM Best ratings. Give your clients confidence in their coverage.
+        </p>
+      </div>
+
+      <div class="fade-in delay-200 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-slate-800 dark:bg-slate-700 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Broad Product Portfolio</h3>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Access Property, Flood, Excess Liability, Inland Marine, and Contractors Equipment—multiple solutions for your commercial clients.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Get Appointed -->
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">Simple Appointment Process</h2>
+    <p class="text-lg text-slate-600 dark:text-slate-400 text-center mb-12">
+      Getting appointed with Gridiron typically takes 3-5 business days
+    </p>
+
+    <div class="space-y-6">
+      <div class="scale-in flex gap-6 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 dark:bg-brand-500 text-white font-bold text-xl flex items-center justify-center">
+          1
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Contact Us</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Reach out through our contact form or email us directly. Let us know which product lines interest you and your target markets.
+          </p>
+        </div>
+      </div>
+
+      <div class="scale-in delay-100 flex gap-6 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 dark:bg-brand-500 text-white font-bold text-xl flex items-center justify-center">
+          2
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Complete Application</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Fill out our simple broker application. We'll need your agency information, license details, and a completed W-9 form.
+          </p>
+        </div>
+      </div>
+
+      <div class="scale-in delay-200 flex gap-6 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 dark:bg-brand-500 text-white font-bold text-xl flex items-center justify-center">
+          3
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Review & Agreement</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            We'll review your application and send you our broker agreement. Once signed, you're ready to start writing business.
+          </p>
+        </div>
+      </div>
+
+      <div class="scale-in delay-300 flex gap-6 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 dark:bg-brand-500 text-white font-bold text-xl flex items-center justify-center">
+          4
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Training & Onboarding</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Complete our quick 30-minute platform training. Get credentials for our online portal and start quoting immediately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal Features -->
+  <section class="bg-slate-50 dark:bg-slate-900 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center">Powerful Broker Portal Features</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="fade-in-left p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Quote Management</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Track all quotes in one dashboard. Save incomplete applications and return anytime. Export quotes to PDF for client review.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-right p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Instant Binding</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Bind qualified risks instantly online. Receive policy documents immediately and send to clients right away.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-left delay-100 p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Commission Tracking</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Real-time commission tracking and reporting. Download statements and access year-end summaries for tax purposes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-right delay-100 p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Direct Communication</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Message underwriters directly through the platform. Upload documents and receive responses in real-time.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-left delay-200 p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Mobile App Access</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Quote and bind on the go with our iOS and Android apps. Perfect for meeting clients in the field.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-right delay-200 p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <div class="flex items-start gap-4">
+            <svg class="w-8 h-8 text-brand-600 dark:text-brand-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Training Resources</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Access underwriting guidelines, product guides, and training videos. Stay up-to-date with program changes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="rounded-2xl bg-gradient-to-br from-brand-600 to-brand-900 dark:from-brand-700 dark:to-brand-950 p-8 md:p-12 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent)]"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Join Our Network?</h2>
+        <p class="text-lg text-brand-50 max-w-2xl mx-auto mb-8">
+          Start writing business with Gridiron today. Complete our simple appointment process and access our full suite of commercial insurance products.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href={`${base}contact`} class="inline-flex items-center px-8 py-4 rounded-lg bg-white text-brand-600 hover:bg-brand-50 font-semibold shadow-lg transition-all">
+            Get Appointed Now
+          </a>
+          <a href={`${base}faq`} class="inline-flex items-center px-8 py-4 rounded-lg border-2 border-white text-white hover:bg-white/10 font-semibold transition-all">
+            View FAQ
+          </a>
+        </div>
+        <p class="text-brand-100 mt-6 text-sm">
+          Questions? Email us at <a href="mailto:brokers@gridironins.com" class="underline hover:text-white">brokers@gridironins.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
