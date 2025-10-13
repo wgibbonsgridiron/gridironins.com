@@ -1,0 +1,107 @@
+---
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+interface Props {
+  filledStates?: string[];
+  class?: string;
+}
+
+const { filledStates = [], class: className = '' } = Astro.props;
+
+// Get the directory of this file
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Read the SVG file from the file system
+const svgPath = join(__dirname, '../../public/maps/us.svg');
+let svgContent = readFileSync(svgPath, 'utf-8');
+
+// Parse and modify the SVG to add classes at build time
+// Add the state-path class to all paths, and state-filled to specified states
+svgContent = svgContent.replace(/<path[^>]*id="([^"]+)"[^>]*>/g, (match, id) => {
+  // Skip the outline path
+  if (id === 'outline') {
+    return match;
+  }
+
+  // Check if this state should be filled
+  const isFilled = filledStates.includes(id);
+  const classes = isFilled ? 'state-path state-filled' : 'state-path';
+
+  // Add or update the class attribute
+  if (match.includes('class="')) {
+    return match.replace(/class="([^"]*)"/, `class="$1 ${classes}"`);
+  } else {
+    return match.replace(/>$/, ` class="${classes}">`);
+  }
+});
+
+// Remove the opening <svg> tag and closing </svg> tag so we can add our own attributes
+svgContent = svgContent.replace(/<svg[^>]*>/, '').replace(/<\/svg>/, '');
+---
+
+<div class:list={['us-map-container', className]}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2000 1200"
+    fill="none"
+    class="w-full h-auto us-map"
+    set:html={svgContent}
+  />
+</div>
+
+<style is:global>
+  /* Default state styling */
+  .state-path {
+    fill: rgb(249, 249, 249);
+    stroke: rgb(156, 163, 175);
+    stroke-width: 0.97063118;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Dark mode default states */
+  :global(.dark) .state-path {
+    fill: rgb(31, 41, 55);
+    stroke: rgb(75, 85, 99);
+  }
+
+  /* Filled state styling */
+  .state-filled {
+    fill: rgb(59, 130, 246) !important;
+    stroke: rgb(37, 99, 235) !important;
+    stroke-width: 1.5;
+  }
+
+  /* Dark mode filled states */
+  :global(.dark) .state-filled {
+    fill: rgb(96, 165, 250) !important;
+    stroke: rgb(147, 197, 253) !important;
+  }
+
+  /* Hover effects */
+  .state-path:hover {
+    opacity: 0.8;
+  }
+
+  /* State labels */
+  .us-map text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    fill: rgb(75, 85, 99);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  :global(.dark) .us-map text {
+    fill: rgb(156, 163, 175);
+  }
+
+  .us-map-container {
+    width: 100%;
+    height: auto;
+  }
+</style>

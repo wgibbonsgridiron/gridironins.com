@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(npm run dev:*)",
-      "Bash(timeout:*)"
+      "Bash(timeout:*)",
+      "Bash(cat:*)",
+      "Bash(dir:*)",
+      "Bash(node extract-paths.js)",
+      "Bash(node generate-component.js)",
+      "Bash(node fix-usmap.js)",
+      "Bash(node calculate-centroids.js)",
+      "Bash(node extract-labels.js)",
+      "Bash(node:*)",
+      "Bash(del calculate-state-centers.js update-labels.js state-centers.json)",
+      "Bash(paste -:*)",
+      "Bash(awk:*)"
     ],
     "deny": [],
     "ask": []
