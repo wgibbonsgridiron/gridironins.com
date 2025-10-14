@@ -22,7 +22,9 @@
       "WebFetch(domain:commons.wikimedia.org)",
       "Bash(findstr:*)",
       "Bash(test:*)",
-      "Bash(npm run build)"
+      "Bash(npm run build)",
+      "Bash(npm run build:github:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

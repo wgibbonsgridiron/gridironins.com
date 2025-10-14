@@ -14,6 +14,13 @@ export default defineConfig({
   },
 
   integrations: [sitemap(), mdx()],
-  site: 'https://gridironins.com',
-  base: '/'
+
+  // Site URL - use custom domain if available, otherwise GitHub Pages URL
+  site: process.env.PUBLIC_SITE_URL || 'https://gridironins.com',
+
+  // Base path - for GitHub Pages subdirectory deployment, set to '/repo-name/'
+  // For custom domain or root deployment, use '/'
+  base: process.env.PUBLIC_BASE_PATH || '/',
+
+  trailingSlash: 'ignore'
 });

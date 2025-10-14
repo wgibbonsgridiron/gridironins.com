@@ -3,15 +3,19 @@ import "../styles/global.css";
 import logo from "../assets/gridiron-logo-borderless.png";
 import SocialIcon from "../components/SocialIcon.astro";
 
+// Get base path for GitHub Pages compatibility
+const base = import.meta.env.BASE_URL;
+
 const {
   title = 'Gridiron Insurance',
   description = 'Modern MGA/MGU solutions across Property, Flood, Excess Liability, and Inland Marine.',
   url = 'https://gridironins.com',
-  image = '/og-default.png'
+  image
 } = Astro.props;
 
-// Get base path for GitHub Pages compatibility
-const base = import.meta.env.BASE_URL;
+// Construct full image URL for OG tags
+// Always use canonical URL for OG images (they're external references)
+const ogImage = image || `${url.replace(/\/$/, '')}/og-default.svg`;
 
 // Get current path for active link detection
 const currentPath = Astro.url.pathname;
@@ -38,7 +42,7 @@ function isActive(path: string): boolean {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
