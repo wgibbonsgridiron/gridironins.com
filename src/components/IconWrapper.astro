@@ -1,0 +1,40 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'primary' | 'secondary' | 'gradient' | 'neutral';
+  class?: string;
+}
+
+const {
+  size = 'md',
+  variant = 'primary',
+  class: className = ''
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-10 h-10',
+  md: 'w-12 h-12',
+  lg: 'w-14 h-14',
+  xl: 'w-16 h-16'
+};
+
+const variantClasses = {
+  primary: 'bg-brand-600 dark:bg-brand-500',
+  secondary: 'bg-slate-800 dark:bg-slate-700',
+  gradient: 'bg-gradient-to-br from-brand-500 to-brand-700',
+  neutral: 'bg-brand-100 dark:bg-brand-900'
+};
+
+const iconSizes = {
+  sm: 'w-5 h-5',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+  xl: 'w-10 h-10'
+};
+---
+
+<div class={`rounded-xl flex items-center justify-center ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}>
+  <div class={`text-white ${variant === 'neutral' ? 'text-brand-600 dark:text-brand-400' : ''} ${iconSizes[size]}`}>
+    <slot />
+  </div>
+</div>

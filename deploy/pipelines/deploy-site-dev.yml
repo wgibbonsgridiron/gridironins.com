@@ -1,0 +1,118 @@
+trigger:
+  branches:
+    include:
+      - dev
+  paths:
+    exclude:
+      - deploy/**
+      - '*.md'
+
+pr:
+  branches:
+    include:
+      - dev
+
+variables:
+  - group: gridironins-dev # Variable group containing AZURE_STATIC_WEB_APPS_API_TOKEN_DEV
+  - name: nodeVersion
+    value: '20.x'
+  - name: staticWebAppName
+    value: 'gridironins-dev'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: 'Build Site'
+    jobs:
+      - job: BuildAstro
+        displayName: 'Build Astro Site'
+        steps:
+          - checkout: self
+
+          - task: NodeTool@0
+            displayName: 'Install Node.js'
+            inputs:
+              versionSpec: $(nodeVersion)
+
+          - task: Cache@2
+            displayName: 'Cache npm packages'
+            inputs:
+              key: 'npm | "$(Agent.OS)" | package-lock.json'
+              restoreKeys: |
+                npm | "$(Agent.OS)"
+              path: $(Build.SourcesDirectory)/node_modules
+
+          - script: |
+              npm ci
+            displayName: 'Install Dependencies'
+
+          - script: |
+              npm run build
+            displayName: 'Build Astro Site'
+            env:
+              NODE_ENV: production
+
+          - task: PublishPipelineArtifact@1
+            displayName: 'Publish Build Artifact'
+            inputs:
+              targetPath: '$(Build.SourcesDirectory)/dist'
+              artifactName: 'site-build'
+              publishLocation: 'pipeline'
+
+  - stage: Deploy
+    displayName: 'Deploy to Azure Static Web Apps'
+    dependsOn: Build
+    condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - deployment: DeploySite
+        displayName: 'Deploy to Dev'
+        environment: 'dev'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+
+                - task: DownloadPipelineArtifact@2
+                  displayName: 'Download Build Artifact'
+                  inputs:
+                    artifactName: 'site-build'
+                    targetPath: '$(Pipeline.Workspace)/dist'
+
+                - task: AzureStaticWebApp@0
+                  displayName: 'Deploy to Azure Static Web Apps'
+                  inputs:
+                    app_location: '/'
+                    api_location: ''
+                    output_location: 'dist'
+                    azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_DEV)
+                    skip_app_build: true
+                    workingDirectory: $(Pipeline.Workspace)
+
+  - stage: DeployPR
+    displayName: 'Deploy PR Preview'
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - job: DeployPRPreview
+        displayName: 'Deploy PR Preview'
+        steps:
+          - checkout: self
+
+          - task: DownloadPipelineArtifact@2
+            displayName: 'Download Build Artifact'
+            inputs:
+              artifactName: 'site-build'
+              targetPath: '$(Pipeline.Workspace)/dist'
+
+          - task: AzureStaticWebApp@0
+            displayName: 'Deploy PR Preview'
+            inputs:
+              app_location: '/'
+              api_location: ''
+              output_location: 'dist'
+              azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_DEV)
+              skip_app_build: true
+              workingDirectory: $(Pipeline.Workspace)

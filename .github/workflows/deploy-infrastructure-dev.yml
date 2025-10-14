@@ -1,0 +1,71 @@
+name: Deploy Infrastructure - Dev
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+    paths:
+      - 'deploy/**'
+      - '.github/workflows/deploy-infrastructure-dev.yml'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_RESOURCE_GROUP: 'rg-gridironins-dev'
+  AZURE_LOCATION: 'eastus'
+  ENVIRONMENT: 'dev'
+
+jobs:
+  deploy-infrastructure:
+    runs-on: ubuntu-latest
+    environment: dev
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Create Resource Group
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az group create \
+              --name ${{ env.AZURE_RESOURCE_GROUP }} \
+              --location ${{ env.AZURE_LOCATION }} \
+              --tags environment=dev project=gridironins
+
+      - name: Deploy Bicep
+        uses: azure/arm-deploy@v2
+        with:
+          scope: resourcegroup
+          resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
+          template: ./deploy/main.bicep
+          parameters: ./deploy/parameters/dev.bicepparam
+          failOnStdErr: false
+
+      - name: Get Static Web App Deployment Token
+        id: static-web-app-token
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            TOKEN=$(az staticwebapp secrets list \
+              --name gridironins-dev \
+              --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
+              --query properties.apiKey \
+              --output tsv)
+            echo "::add-mask::$TOKEN"
+            echo "token=$TOKEN" >> $GITHUB_OUTPUT
+
+      - name: Output deployment information
+        run: |
+          echo "Infrastructure deployed successfully to Dev environment"
+          echo "Static Web App deployment token has been generated"

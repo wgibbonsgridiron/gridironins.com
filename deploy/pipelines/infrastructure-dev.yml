@@ -1,0 +1,112 @@
+trigger:
+  branches:
+    include:
+      - dev
+  paths:
+    include:
+      - deploy/**
+      - deploy/pipelines/infrastructure-dev.yml
+
+pr: none
+
+variables:
+  azureSubscription: 'Azure-Service-Connection' # Update with your service connection name
+  resourceGroup: 'rg-gridironins-dev'
+  location: 'eastus'
+  environment: 'dev'
+  vmImage: 'ubuntu-latest'
+
+pool:
+  vmImage: $(vmImage)
+
+stages:
+  - stage: Validate
+    displayName: 'Validate Bicep Template'
+    jobs:
+      - job: ValidateBicep
+        displayName: 'Validate Bicep'
+        steps:
+          - checkout: self
+
+          - task: AzureCLI@2
+            displayName: 'Validate Bicep Template'
+            inputs:
+              azureSubscription: $(azureSubscription)
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az bicep build --file deploy/main.bicep
+                echo "Bicep validation successful"
+
+  - stage: Deploy
+    displayName: 'Deploy Infrastructure'
+    dependsOn: Validate
+    condition: succeeded()
+    jobs:
+      - deployment: DeployInfrastructure
+        displayName: 'Deploy to Dev'
+        environment: 'dev'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+
+                - task: AzureCLI@2
+                  displayName: 'Create Resource Group'
+                  inputs:
+                    azureSubscription: $(azureSubscription)
+                    scriptType: 'bash'
+                    scriptLocation: 'inlineScript'
+                    inlineScript: |
+                      az group create \
+                        --name $(resourceGroup) \
+                        --location $(location) \
+                        --tags environment=$(environment) project=gridironins
+
+                - task: AzureResourceManagerTemplateDeployment@3
+                  displayName: 'Deploy Bicep Template'
+                  inputs:
+                    deploymentScope: 'Resource Group'
+                    azureResourceManagerConnection: $(azureSubscription)
+                    resourceGroupName: $(resourceGroup)
+                    location: $(location)
+                    templateLocation: 'Linked artifact'
+                    csmFile: 'deploy/main.bicep'
+                    csmParametersFile: 'deploy/parameters/dev.bicepparam'
+                    deploymentMode: 'Incremental'
+                    deploymentName: 'infra-$(Build.BuildNumber)'
+
+                - task: AzureCLI@2
+                  displayName: 'Get Static Web App Details'
+                  inputs:
+                    azureSubscription: $(azureSubscription)
+                    scriptType: 'bash'
+                    scriptLocation: 'inlineScript'
+                    inlineScript: |
+                      STATIC_WEB_APP_NAME=$(az staticwebapp list -g $(resourceGroup) --query "[0].name" -o tsv)
+                      HOSTNAME=$(az staticwebapp show -n $STATIC_WEB_APP_NAME -g $(resourceGroup) --query "defaultHostname" -o tsv)
+
+                      echo "##vso[task.setvariable variable=staticWebAppName;isOutput=true]$STATIC_WEB_APP_NAME"
+                      echo "##vso[task.setvariable variable=hostname;isOutput=true]$HOSTNAME"
+
+                      echo "Static Web App Name: $STATIC_WEB_APP_NAME"
+                      echo "Hostname: https://$HOSTNAME"
+                  name: 'outputVars'
+
+                - task: AzureCLI@2
+                  displayName: 'Get Deployment Token'
+                  inputs:
+                    azureSubscription: $(azureSubscription)
+                    scriptType: 'bash'
+                    scriptLocation: 'inlineScript'
+                    inlineScript: |
+                      TOKEN=$(az staticwebapp secrets list \
+                        --name $(outputVars.staticWebAppName) \
+                        --resource-group $(resourceGroup) \
+                        --query properties.apiKey \
+                        --output tsv)
+
+                      echo "##vso[task.setvariable variable=AZURE_STATIC_WEB_APPS_API_TOKEN;issecret=true]$TOKEN"
+                      echo "Deployment token retrieved successfully"
+                      echo "Add this token to Azure DevOps Library as: AZURE_STATIC_WEB_APPS_API_TOKEN_DEV"

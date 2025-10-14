@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProductGrid from '../components/ProductGrid.astro';
 import CTA from '../components/CTA.astro';
+import Testimonial from '../components/Testimonial.astro';
 
 const t = 'Insurance built for the way modern teams actually work.';
 const d = 'Quote, bind, and issue across Property, Flood, Excess Liability, and Inland Marine with speed and control.';
@@ -124,104 +125,28 @@ const d = 'Quote, bind, and issue across Property, Flood, Excess Liability, and 
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Testimonial 1 -->
-      <div class="fade-in p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:border-brand-300 dark:hover:border-brand-600 transition-all">
-        <div class="flex gap-1 mb-4">
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-        </div>
-        <p class="text-slate-700 dark:text-slate-300 mb-6 italic leading-relaxed">
-          "Gridiron's platform has completely transformed how we handle excess liability quotes. What used to take days now takes minutes. The underwriting team is responsive and the bind-and-issue process is seamless."
-        </p>
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold">
-            SJ
-          </div>
-          <div>
-            <div class="font-semibold text-slate-900 dark:text-white">Sarah Johnson</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Wholesale Broker, Miami FL</div>
-          </div>
-        </div>
-      </div>
+      <Testimonial
+        quote="Gridiron's platform has completely transformed how we handle excess liability quotes. What used to take days now takes minutes. The underwriting team is responsive and the bind-and-issue process is seamless."
+        name="Sarah Johnson"
+        title="Wholesale Broker, Miami FL"
+        initials="SJ"
+      />
 
-      <!-- Testimonial 2 -->
-      <div class="fade-in delay-100 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:border-brand-300 dark:hover:border-brand-600 transition-all">
-        <div class="flex gap-1 mb-4">
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-        </div>
-        <p class="text-slate-700 dark:text-slate-300 mb-6 italic leading-relaxed">
-          "As a contractor-focused agent, I've been blown away by the speed of the Contractors Plus program. My clients love the instant quotes and I love the commission structure. This is the future of commercial insurance."
-        </p>
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold">
-            MT
-          </div>
-          <div>
-            <div class="font-semibold text-slate-900 dark:text-white">Michael Torres</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Independent Agent, Austin TX</div>
-          </div>
-        </div>
-      </div>
+      <Testimonial
+        quote="As a contractor-focused agent, I've been blown away by the speed of the Contractors Plus program. My clients love the instant quotes and I love the commission structure. This is the future of commercial insurance."
+        name="Michael Torres"
+        title="Independent Agent, Austin TX"
+        initials="MT"
+        delay={100}
+      />
 
-      <!-- Testimonial 3 -->
-      <div class="fade-in delay-200 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:border-brand-300 dark:hover:border-brand-600 transition-all">
-        <div class="flex gap-1 mb-4">
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-          <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path>
-          </svg>
-        </div>
-        <p class="text-slate-700 dark:text-slate-300 mb-6 italic leading-relaxed">
-          "Finally, a flood program that doesn't require jumping through hoops. No elevation certs to quote? Game changer. The limits are competitive and the online portal makes my job so much easier."
-        </p>
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold">
-            LP
-          </div>
-          <div>
-            <div class="font-semibold text-slate-900 dark:text-white">Lisa Patel</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Commercial Broker, Charleston SC</div>
-          </div>
-        </div>
-      </div>
+      <Testimonial
+        quote="Finally, a flood program that doesn't require jumping through hoops. No elevation certs to quote? Game changer. The limits are competitive and the online portal makes my job so much easier."
+        name="Lisa Patel"
+        title="Commercial Broker, Charleston SC"
+        initials="LP"
+        delay={200}
+      />
     </div>
 
     <!-- Trust Badges -->
